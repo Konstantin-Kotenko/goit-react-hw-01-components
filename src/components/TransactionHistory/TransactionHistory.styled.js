@@ -4,43 +4,45 @@ export const TransactionsTable = styled.table`
   width: 768px;
   text-align: center;
   margin: 0 auto;
-  margin-bottom: ${p => p.theme.space[4]}px;
-  border-radius: ${p => p.theme.radii.normal};
+  margin-bottom: ${({ theme }) => theme.space.ml};
+  border-radius: ${({ theme }) => theme.radii.normal};
   box-shadow: 0 0 10px -1px;
   overflow: hidden;
-  background-color: ${p => p.theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.white};
 `;
 export const TableHead = styled.thead`
-  background-color: ${p => p.theme.colors.accent};
-  color: ${p => p.theme.colors.secondary};
+  background-color: ${({ theme }) => theme.colors.accent};
+  color: ${({ theme }) => theme.colors.secondary};
   text-transform: uppercase;
 `;
 export const TableBody = styled.tbody`
-  color: ${p => p.theme.colors.text};
+  color: ${({ theme }) => theme.colors.text};
 `;
 export const TableRaw = styled.tr`
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   &:not(:last-child) {
-    border-bottom: ${p => p.theme.borders.normal} ${p => p.theme.colors.border};
+    border-bottom: ${({ theme }) => theme.borders.normal},
+      ${({ theme }) => theme.colors.border};
   }
   &:nth-of-type(2n) {
-    background-color: ${p => p.theme.colors.background};
+    background-color: ${({ theme }) => theme.colors.background};
   }
   &:hover,
   &:nth-of-type(2n):hover {
-    background-color: ${p => p.theme.colors.accent};
+    background-color: ${({ theme }) => theme.colors.accent};
   }
 `;
 export const HeadCell = styled.th`
-  padding: ${p => p.theme.space[3]}px;
+  padding: ${({ theme }) => theme.space.m};
   &:not(:last-child) {
     border-right: 1px solid #e4e4e4;
   }
 `;
 export const TableData = styled.td`
-  padding: ${p => p.theme.space[3]}px;
+  padding: ${({ theme }) => theme.space.m};
   &:not(:last-child) {
-    border-right: ${p => p.theme.borders.normal} ${p => p.theme.colors.muted};
+    border-right: ${({ theme }) => theme.borders.normal},
+      ${({ theme }) => theme.colors.muted};
   }
 `;

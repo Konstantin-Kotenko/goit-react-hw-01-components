@@ -5,12 +5,12 @@ export const StatisticsBox = styled.section`
   box-shadow: 0 0 10px -1px;
   text-align: center;
   margin: 0 auto;
-  margin-bottom: ${p => p.theme.space[4]}px;
-  background-color: ${p => p.theme.colors.white};
+  margin-bottom: ${({ theme }) => theme.space.ml};
+  background-color: ${({ theme }) => theme.colors.white};
 `;
 export const Title = styled.h2`
-  padding: ${p => p.theme.space[5]}px 0;
-  color: ${p => p.theme.colors.primary};
+  padding: ${({ theme }) => theme.space.l} 0;
+  color: ${({ theme }) => theme.colors.primary};
   text-transform: uppercase;
 `;
 export const StatsticsList = styled.ul`
@@ -26,25 +26,27 @@ export const StatisticsItem = styled.li`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: ${p => p.theme.space[4]}px 0;
+  padding: ${({ theme }) => theme.space.ml} 0;
   cursor: pointer;
-  border-top: ${p => p.theme.borders.normal} ${p => p.theme.colors.muted};
-  color: ${p => p.theme.colors.black};
-  background-color: ${p => {
-    return p.backgroundColor;
+  border-top: ${({ theme }) => theme.borders.normal},
+    ${({ theme }) => theme.colors.muted};
+  color: ${({ theme }) => theme.colors.black};
+  background-color: ${({ backgroundColor }) => {
+    return backgroundColor;
   }};
-  font-weight: ${p => p.theme.fontWeights.semibold};
+  font-weight: ${({ theme }) => theme.fontWeights.normal};
   &:not(:last-child) {
-    border-right: ${p => p.theme.borders.normal} ${p => p.theme.colors.muted};
+    border-right: ${({ theme }) => theme.borders.normal},
+      ${({ theme }) => theme.colors.muted};
   }
   &:hover {
     transform: scale(1.03);
   }
 `;
 export const StatisticsLabel = styled.span`
-  font-size: ${p => p.theme.fontSizes.m};
+  font-size: ${({ theme }) => theme.fontSizes.m};
 `;
 export const Percentage = styled.span`
-  margin-top: ${p => p.theme.space[2]}px;
-  font-size: ${p => p.theme.fontSizes.l};
+  margin-top: ${({ theme }) => theme.space.s};
+  font-size: ${({ theme }) => theme.fontSizes.l};
 `;
